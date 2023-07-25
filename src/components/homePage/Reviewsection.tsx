@@ -81,8 +81,7 @@ function Reviewsection() {
           hidden: { opacity: 0, x: -150 },
           visible: { opacity: 1, x: 0 },
         }} 
-        className="flex lg:gap-4 lg:mx-0 mx-3 gap-2 ">
-          <p className="lg:text-3xl lg:font-black text-xl font-semibold">|</p>
+        className="flex justify-center ">
           <p className="lg:text-4xl lg:font-bold text-xl font-semibold">รีวิวจากผู้เรียน</p>
         </motion.div>
 
@@ -102,7 +101,7 @@ function Reviewsection() {
           hidden: { opacity: 0, x: 150 },
           visible: { opacity: 1, x: 0 },
         }} 
-        className="flex lg:gap-8 gap-3  flex-wrap justify-center">
+        className="flex lg:gap-8 gap-3 lg:w-[1024px] mx-auto flex-wrap justify-center">
         {reviews.map((review, i) => {
             return (
          

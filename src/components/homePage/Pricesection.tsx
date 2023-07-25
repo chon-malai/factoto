@@ -7,6 +7,7 @@ import { useAuthContext } from "@/contexts/authContext";
 import { FC } from "react";
 import { Url } from "url";
 import Link from "next/link";
+import { buttonVariants } from "../ui/Button";
 
 export interface IPriceDetails {
   module: string;
@@ -16,6 +17,7 @@ export interface IPriceDetails {
   saledPrice?: string;
   actions: string;
   paymaent: Url
+  readmore: string
 }
 
 interface ILogin {
@@ -33,6 +35,7 @@ const priceDetails = [
     ],
     actions: "Buy Module 1",
     payment: "https://buy.stripe.com/28o3e2elY6bs2acdQQ",
+    readmore:"/module",
   },
   {
     module: "2",
@@ -44,6 +47,7 @@ const priceDetails = [
     ],
     actions: "Buy Module 2",
     payment: "https://buy.stripe.com/4gw5ma4Lo57o6qs4gh",
+    readmore:"/module",
   },
   {
     module: "3",
@@ -55,6 +59,7 @@ const priceDetails = [
     ],
     actions: "Buy Module 3",
     payment: "https://buy.stripe.com/3csg0O0v80R82ac7su",
+    readmore:"/module",
   },
   {
     module: "1+2+3",
@@ -68,11 +73,12 @@ const priceDetails = [
     ],
     actions: "Buy Module 1+2+3",
     payment: "https://buy.stripe.com/8wMbKydhU8jA7uwcMP",
+    readmore:"/module",
   },
   ,
 ];
 
-const  Pricesection: FC<> = () => {
+const  Pricesection: FC = () => {
 
   const {isLoggedIn} = useAuthContext();
   return (
@@ -92,8 +98,7 @@ const  Pricesection: FC<> = () => {
           hidden: { opacity: 0, x: -150 },
           visible: { opacity: 1, x: 0 },
         }} 
-          className="flex lg:gap-4 gap-2 lg:mx-0 mx-4  ">
-          <p className="lg:text-3xl font-black text-xl">|</p>
+          className="flex lg:gap-4 gap-2 justify-center w-11/12 mx-auto  ">
           <p className="lg:text-4xl font-bold text-xl">
             เริ่มเรียนได้เเล้ววันนี้ในราคาสุดคุ้ม
           </p>
@@ -118,7 +123,7 @@ const  Pricesection: FC<> = () => {
               return (
                 <div
                   className={cn(
-                    "border border-stone-200 lg:p-6 rounded-xl lg:w-60 lg:gap-0 w-11/12 flex flex-col justify-between backdrop-blur-3xl lg:h-[510px] h-auto p-3 gap-7  ",
+                    "border border-stone-200 lg:p-6 rounded-xl lg:w-60 lg:gap-0 w-11/12 flex flex-col justify-between backdrop-blur-3xl lg:h-[530px] h-auto sm:p-7 p-3 gap-7  ",
                     {
                       "bg-teal-900 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 border border-gray-100":
                         priceDetail!.saledPrice,
@@ -129,7 +134,7 @@ const  Pricesection: FC<> = () => {
                   <div className="flex lg:flex-col flex-row gap-3">
                     <div className="flex flex-col gap-2">
                       <Badge>Module {priceDetail!.module}</Badge>
-                      <p className="font-semibold lg:text-xl lg:w-52 w-28 text-base">
+                      <p className="font-semibold lg:text-xl lg:w-52 sm:w-60 w-28 text-base">
                         {priceDetail!.courseName}
                       </p>
                       {priceDetail!.saledPrice && (
@@ -154,12 +159,21 @@ const  Pricesection: FC<> = () => {
                       })}
                     </div>
                   </div>
+                  <div className="flex flex-col gap-3">
                   {isLoggedIn ? 
-                 ( <Link href={`${priceDetail?.payment}`} className="flex justify-center items-center bg-stone-900 h-8 rounded-lg text-white ">
+                 ( 
+                 <Link href={`${priceDetail?.payment}`} className="flex justify-center items-center bg-stone-900 h-8 rounded-lg text-white lg:text-lg text-sm ">
                     {priceDetail!.actions}
-                  </Link>):( <Link href="/login" className="flex justify-center items-center bg-stone-900 h-8 rounded-lg text-white">
+                  </Link>
+                  ):(
+                  <Link href="/login" className="flex justify-center items-center bg-stone-900 h-8 rounded-lg text-white lg:text-lg text-sm">
                     {priceDetail!.actions}
-                  </Link>)}
+                  </Link>
+                  )}
+                  <Link href={`${priceDetail?.readmore}`}  className={cn(buttonVariants({ size: "xl", variant: "outline" })," flex justify-center items-center  h-8 rounded-lg lg:text-lg text-sm")} >
+                  Read More 
+                  </Link>
+                  </div>
                 </div>
               );
             })}
