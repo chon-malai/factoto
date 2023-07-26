@@ -11,7 +11,7 @@ import Lastsection from "@/components/homePage/Lastsection";
 import Footer from "@/components/homePage/Foooter";
 import { cn } from "@/lib/utils";
 
-import Navbar from "@/components/NavbarUser";
+import Navbar from "@/components/Navbar";
 
 interface pageProps {}
 const page: FC<pageProps> = ({}) => {

@@ -9,7 +9,7 @@ import Questionsection from "@/components/homePage/Questionsection";
 import Lastsection from "@/components/homePage/Lastsection";
 import Footer from "@/components/homePage/Foooter";
 import { cn } from "@/lib/utils";
-import NavbarUser from "@/components/NavbarUser";
+import NavbarUser from "@/components/Navbar";
 
 interface layoutProps {
   children: React.ReactNode;

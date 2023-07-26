@@ -10,6 +10,7 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import smallLogo from "../../public/small-logo.png";
+
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -82,7 +83,11 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   return (
     <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
       <div className="mx-auto w-full max-w-sm lg:w-96">
-        <div>
+        <div
+          className={
+            page === UserAuthFormPage.LogIn ? "flex flex-col items-center" : ""
+          }
+        >
           <Image
             className="h-10 w-auto"
             src={smallLogo}
@@ -91,6 +96,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">
             {page === UserAuthFormPage.LogIn ? "เข้าสู่ระบบ" : "สมัครสมาชิก"}
           </h2>
+
           {page === UserAuthFormPage.LogIn ? (
             <p className="mt-2 text-sm leading-6 text-gray-500">
               ยังไม่ได้เป็นสมาชิก?{" "}
@@ -102,9 +108,18 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               </Link>
             </p>
           ) : (
-            <></>
+            <p className="mt-2 text-sm leading-6 text-gray-500">
+              เป็นสมาชิกกับเราแล้ว?{" "}
+              <Link
+                href="/login"
+                className="font-semibold text-primary-button hover:text-accent"
+              >
+                เข้าสู่ระบบ
+              </Link>
+            </p>
           )}
         </div>
+
         <form onSubmit={onSubmit} action="#" method="POST">
           <div className="mt-10">
             <div className="space-y-6">
