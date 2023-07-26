@@ -20,9 +20,6 @@ export interface IPriceDetails {
   readmore: string
 }
 
-interface ILogin {
-  isLoggedIn: boolean;
-}
 
 const priceDetails = [
   {
