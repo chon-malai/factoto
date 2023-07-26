@@ -1,4 +1,3 @@
-
 import { FC } from "react";
 
 import { IBM_Plex_Sans_Thai } from "next/font/google";
@@ -14,7 +13,7 @@ import { cn } from "@/lib/utils";
 
 import Navbar from "@/components/Navbar";
 
-interface pageProps {}   
+interface pageProps {}
 const page: FC<pageProps> = ({}) => {
   //   const { isLoggedIn } = useAuthContext();
   //   console.log(isLoggedIn, "eieifoobar");
@@ -26,14 +25,12 @@ const page: FC<pageProps> = ({}) => {
       <Problemsection />
       <Benefitsection />
       <Reviewsection />
-      <Pricesection isLoggedIn={false} />
+      <Pricesection />
       <Questionsection />
       <Lastsection isLoggedIn={false} />
       <Footer />
     </div>
   );
-
 };
 
 export default page;
-

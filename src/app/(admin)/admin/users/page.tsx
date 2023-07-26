@@ -1,4 +1,4 @@
-import AddCourseForm from "@/components/AddCourseForm";
+"use client";
 
 import Link from "next/link";
 import {
@@ -52,14 +52,6 @@ const Page = () => {
           <p className="mt-2 text-sm text-gray-700">
             ตารางแสดงรายละเอียดของนักเรียน
           </p>
-        </div>
-        <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-          <button
-            type="button"
-            className="block rounded-md bg-primary-button px-3 py-2 text-center text-sm font-semibold text-white hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Create new user
-          </button>
         </div>
       </div>
       <div className="mt-8 flow-root">

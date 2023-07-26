@@ -97,39 +97,6 @@ const Navbar: FC = () => {
                 </Link>
               </>
             )}
-            {/* {isLoggedIn ? (
-              <>
-                <p>{username}</p>
-                <Avatar className=" bg-emerald-500">
-                  <AvatarImage></AvatarImage>
-                  <AvatarFallback>{username![0]}</AvatarFallback>
-                </Avatar>
-                <Link
-                  href={"/"}
-                  className={cn(buttonVariants({ variant: "link" }))}
-                >
-                  Log out
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link
-                  className={cn(buttonVariants({ variant: "ghost" }))}
-                  href="/login"
-                >
-                  เข้าสู่ระบบ
-                </Link>
-                <Link
-                  className={cn(
-                    buttonVariants({ variant: "ghost" }),
-                    "bg-secondary-button text-[#222]"
-                  )}
-                  href="/register"
-                >
-                  ลงทะเบียน
-                </Link>
-              </>
-            )} */}
           </div>
           <button className="lg:hidden">
             <AlignJustify

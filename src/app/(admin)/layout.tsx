@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import NavbarAdmin from "@/components/NavbarAdmin";
 import { FC } from "react";
 
 interface layoutProps {
@@ -8,7 +8,7 @@ interface layoutProps {
 const layout: FC<layoutProps> = ({ children }) => {
   return (
     <div>
-      <Navbar />
+      <NavbarAdmin />
       {children}
     </div>
   );

@@ -13,30 +13,26 @@ export interface IAuthContext {
 
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
+const token = localStorage.getItem("token");
+const user = localStorage.getItem("user");
+
 export const AuthProvider = ({ children }: any): React.ReactNode => {
-  //const token = localStorage.getItem('token')
-  const [token, setToken] = useState("");
+  // const [token, setToken] = useState("");
+  // const [user, setUser] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(!!token);
+  const [username, setUsername] = useState(user);
   const [name, setName] = useState("");
   const [id, setId] = useState("");
 
-  useEffect(() => {
-    const storedToken = localStorage.getItem("token");
-    if (storedToken) {
-      setToken(storedToken);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedToken = localStorage.getItem("token");
+  //   const storedUser = localStorage.getItem("user");
 
-  // const user = localStorage.getItem('user')
-  const [user, setUser] = useState("");
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(storedUser);
-    }
-  }, []);
-
-  const [isLoggedIn, setIsLoggedIn] = useState(!!token);
-  const [username, setUsername] = useState(user);
+  //   if (storedUser && storedToken) {
+  //     setUser(storedUser);
+  //     setToken(storedToken);
+  //   }
+  // }, []);
 
   const login = async (username: string, password: string) => {
     const loginInfo = { email: username, password };
@@ -57,6 +53,7 @@ export const AuthProvider = ({ children }: any): React.ReactNode => {
       localStorage.setItem("user", username);
       setIsLoggedIn(true);
       setUsername(username);
+      setId(data.id);
       console.log(isLoggedIn);
     } catch (err: any) {
       throw new Error(err.message);
@@ -65,7 +62,7 @@ export const AuthProvider = ({ children }: any): React.ReactNode => {
 
   const logout = () => {
     localStorage.removeItem("token");
-    setToken("");
+    // setToken("");
     setName("");
     setId("");
     localStorage.removeItem("user");
