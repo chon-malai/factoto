@@ -11,10 +11,8 @@ import { useAuthContext } from "@/contexts/authContext";
 import { FC } from "react";
 import { cn } from "@/lib/utils";
 
-interface ILogin {
-  isLoggedIn:boolean;
-}
-const  Lastsection: FC<ILogin> = () => {
+
+const  Lastsection: FC = () => {
   const {isLoggedIn} = useAuthContext();
   return (
     <div id="last-section" className="flex justify-center h-auto my-10 ">
