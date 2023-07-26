@@ -25,7 +25,7 @@ const page: FC<pageProps> = ({}) => {
       <Problemsection />
       <Benefitsection />
       <Reviewsection />
-      <Pricesection isLoggedIn={false} />
+      <Pricesection />
       <Questionsection />
       <Lastsection isLoggedIn={false} />
       <Footer />
