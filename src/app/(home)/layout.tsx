@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { IBM_Plex_Sans_Thai } from "next/font/google";
+
 import Navbar from "@/components/Navbar";
 
 interface layoutProps {
