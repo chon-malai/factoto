@@ -36,23 +36,20 @@ const Navbar: FC = () => {
     <div className="sticky top-0 z-[10]">
       <div className="sticky top-0 inset-x-0 h-fit z-[10] py-4 bg-[#0B0E0C] text-background backdrop-blur-lg  ">
         <div className="container h-full mx-auto flex items-center justify-between gap-2">
-          <div className="flex justify-start gap-12 items-center">
+          <div className="flex justify-between gap-12 items-center">
             <Link href="/">
               <h1 className=" font-bold text-white text-2xl md:block">
                 Factonation
               </h1>
             </Link>
 
-            <div className="hidden lg:flex lg:items-center lg:justify-start lg:gap-8">
-              <Link href="/#price-section" className="scroll-smooth">
-                ราคาคอร์ส
-              </Link>
-              <ScrollLink href="/#question-section">คำถามที่พบบ่อย</ScrollLink>
-              <Link href="/dashboard">คอร์สเรียน</Link>
-            </div>
           </div>
 
           <div className="lg:flex items-center gap-3 hidden ">
+          {/* <div className="hidden lg:flex lg:items-center lg:justify-start lg:gap-10">
+            
+            <Link href="/dashboard">คอร์สเรียน</Link>
+          </div> */}
             {isLoggedIn ? (
               <DropdownMenu>
                 <DropdownMenuTrigger>
@@ -166,18 +163,7 @@ const Navbar: FC = () => {
         >
           <div className="flex flex-col gap-4 mx-7 py-6" 
           onClick={() => setOpen(!open)}>
-            <div
-              className="flex gap-2 items-center"
-            >
-              <DollarSign size={15} />
-              <Link href="/#price-section">ราคาคอร์ส</Link>
-            </div>
-            <div
-              className="flex gap-2 items-center"
-            >
-              <BadgeHelp size={15} />
-              <Link href="/#question-section">คำถามที่พบบ่อย</Link>
-            </div>
+           
             <div
               className="flex gap-2 items-center"
             >

@@ -5,8 +5,8 @@ import {
   AccordionItem,
   AccordionContent,
 } from "@/components/ui/accordion";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const QnA1 = [
   {
@@ -72,8 +72,8 @@ function Questionsection() {
               ไม่พบคำถามที่คุณต้องการ ติดต่อทีมงาน ของเราได้เลย
             </p>
             <div className="flex flex-wrap gap-3 text-primary-button w-auto lg:font-normal lg:text-xs text-[10px] font-light ">
-            <p>เบอร์โทร: 062-179-9526</p>
-            <p>Line Official ID: @factonation</p>
+            <Link href="tel:0621799526" >เบอร์โทร: 062-179-9526</Link>
+            <Link href="https://page.line.me/559odtho?openQrModal=true" >Line Official ID: @factonation</Link>
             </div>
             </div>
           </motion.div>
