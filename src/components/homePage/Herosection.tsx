@@ -36,7 +36,7 @@ const Herosection: FC= () => {
           }}
           className="flex flex-col lg:w-6/12 lg:items-start gap-7 items-center "
         >
-          <div className="flex lg:flex-col sm:flex-row lg:gap-4 lg:text-5xl md:text-3xl lg:font-extrabold text-3xl gap-2 font-semibold ">
+          <div className="flex lg:flex-col sm:flex-row flex-col lg:gap-4 lg:text-5xl md:text-4xl lg:font-extrabold text-3xl gap-2 font-semibold ">
             <div className="flex gap-2 flex-row ">
               <h1 className="flex ">เริ่มทำระบบ</h1>
               <h1 className="flex text-primary-button ">Factory 4.0</h1>
